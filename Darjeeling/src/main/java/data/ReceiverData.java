@@ -15,7 +15,7 @@ public class ReceiverData {
 	@Column
 	String name;
 	@Column
-	String Address;
+	String address;
 	@Column
 	String tel;
 	@Column
@@ -38,11 +38,11 @@ public class ReceiverData {
 	}
 
 	public String getAddress() {
-		return Address;
+		return address;
 	}
 
 	public void setAddress(String address) {
-		Address = address;
+		this.address = address;
 	}
 
 	public String getTel() {

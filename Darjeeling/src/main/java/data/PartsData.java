@@ -18,7 +18,7 @@ public class PartsData {
 	@Column
 	Long price;
 	@Column
-	Long Stock;
+	Long stock;
 
 	public Long getId() {
 		return id;
@@ -45,10 +45,10 @@ public class PartsData {
 	}
 
 	public Long getStock() {
-		return Stock;
+		return stock;
 	}
 
 	public void setStock(Long stock) {
-		Stock = stock;
+		this.stock = stock;
 	}
 }
