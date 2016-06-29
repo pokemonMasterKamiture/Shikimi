@@ -13,7 +13,7 @@
 <h1>顧客追加</h1>
 
 <table>
-<form:form modelAttribute="cd">
+<form:form modelAttribute="customerData">
 	<tr><td>名前</td><td><form:input path="name"/></td></tr>
 	<tr><td>住所</td><td><form:input path="address"/></td></tr>
 	<tr><td>電話番号</td><td><form:input path="tel"/></td></tr>

@@ -13,7 +13,7 @@
 <body>
 	<h1>受注更新</h1>
 	<table>
-		<form:form modelAttribute="ordd">
+		<form:form modelAttribute="orderData">
 			<tr>
 				<td>発注元</td>
 				<td><form:select path="cust">

@@ -13,7 +13,7 @@
 <h1>部品更新</h1>
 
 <table>
-<form:form modelAttribute="pard">
+<form:form modelAttribute="partsData">
 	<tr><td>部品名</td><td><form:input path="name"/></td></tr>
 	<tr><td>メーカー</td><td><form:input path="maker"/></td></tr>
 	<tr><td>単価</td><td><form:input path="price"/></td></tr>
