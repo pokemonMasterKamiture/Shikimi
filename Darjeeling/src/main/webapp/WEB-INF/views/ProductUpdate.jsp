@@ -14,13 +14,19 @@
 <table>
 
 <form:form modelAttribute="prod">
-	<tr><td>商品名</td><td><form:input path=""/></td></tr>
-	<!-- 材料と必要個数、はたくさん作るか、自動生成してください。 -->
-	<tr><td>必要パーツ</td><td><form:select path=""/></td>
-	<td><form:input path=""/>個</td></tr>
-	<tr><td>工程項目</td><td><form:input path=""/></td></tr>
-	<tr><td>作成期間</td><td><form:input path=""/></td></tr>
-	<tr><td>販売価格</td><td><form:input path=""/></td></tr>
+	<tr><td>商品名</td><td><form:input path="name"/></td></tr>
+	<tr><td>価格</td><td><form:input path="price"/></td></tr>
+	<!-- 材料と必要個数、工程項目はたくさん作るか、自動生成してください。 -->
+	<tr><td>部品</td>
+				<td><form:select path="reqparts">
+						<option>かしら</option>
+						<option>ねぎま</option>
+						<option>つくね</option>
+					</form:select></td></tr>
+	<tr><td>必要個数</td><td><form:input path="reqnum"/></td></tr>
+	<tr><td>工程項目</td><td><form:input path="process"/></td></tr>
+	<tr><td>作成期間</td><td><form:input path="tock"/></td></tr>
+	<tr><td>純利益</td><td><form:input path="income"/></td></tr>
 	<tr><td></td><td><input type="submit" value="追加" /></td></tr>
 </form:form>
 </table>
