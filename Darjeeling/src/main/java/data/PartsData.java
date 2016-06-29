@@ -7,7 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class CustomerData {
+public class PartsData {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column
@@ -15,11 +16,9 @@ public class CustomerData {
 	@Column
 	String name;
 	@Column
-	String Address;
+	Long price;
 	@Column
-	String tel;
-	@Column
-	String love;
+	Long Stock;
 
 	public Long getId() {
 		return id;
@@ -37,27 +36,19 @@ public class CustomerData {
 		this.name = name;
 	}
 
-	public String getAddress() {
-		return Address;
+	public Long getPrice() {
+		return price;
 	}
 
-	public void setAddress(String address) {
-		Address = address;
+	public void setPrice(Long price) {
+		this.price = price;
 	}
 
-	public String getTel() {
-		return tel;
+	public Long getStock() {
+		return Stock;
 	}
 
-	public void setTel(String tel) {
-		this.tel = tel;
-	}
-
-	public String getLove() {
-		return love;
-	}
-
-	public void setLove(String love) {
-		this.love = love;
+	public void setStock(Long stock) {
+		Stock = stock;
 	}
 }
