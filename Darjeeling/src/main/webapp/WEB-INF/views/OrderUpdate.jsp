@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-        <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page session="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -15,20 +15,8 @@
 	<table>
 		<form:form modelAttribute="ordd">
 			<tr>
-				<td>表品名</td>
-				<td><form:select path="">
-						<option>とり</option>
-						<option>にわとり</option>
-						<option>ひよこ</option>
-					</form:select></td>
-			</tr>
-			<tr>
-				<td>注文数</td>
-				<td><form:input path=""/></td>
-			</tr>
-			<tr>
 				<td>発注元</td>
-				<td><form:select path="">
+				<td><form:select path="cust">
 						<option>ペットショップ</option>
 						<option>鳥使い</option>
 						<option>投資家</option>
@@ -36,7 +24,7 @@
 			</tr>
 			<tr>
 				<td>出荷先</td>
-				<td><form:select path="">
+				<td><form:select path="receiver">
 						<option>ペットショップ：ここ店</option>
 						<option>ペットショップ：あそこ店</option>
 						<option>鳥使い</option>
@@ -44,8 +32,22 @@
 					</form:select></td>
 			</tr>
 			<tr>
+				<td>表品名</td>
+				<td><form:select path="product">
+						<option>とり</option>
+						<option>にわとり</option>
+						<option>ひよこ</option>
+					</form:select></td>
+			</tr>
+			<tr>
+				<td>注文数</td>
+				<td><form:input path="total" /></td>
+			</tr>
+
+
+			<tr>
 				<td>期限</td>
-				<td><form:select path="">
+				<td><form:select path="deadlineMonth">
 						<option>１月</option>
 						<option>２月</option>
 						<option>３月</option>
@@ -59,7 +61,7 @@
 						<option>１１月</option>
 						<option>１２月</option>
 
-					</form:select> <form:select path="">
+					</form:select> <form:select path="deadlineDay">
 						<option>１日</option>
 						<option>２日</option>
 						<option>３日</option>
@@ -91,7 +93,7 @@
 						<option>２９日</option>
 						<option>３０日</option>
 						<option>３１日</option>
-					</form:select> <form:select path="">
+					</form:select> <form:select path="deadlineTime">
 						<option>１時</option>
 						<option>２時</option>
 						<option>３時</option>
@@ -117,7 +119,7 @@
 						<option>２３時</option>
 						<option>２４時</option>
 
-					</form:select> <form:select path="">
+					</form:select> <form:select path="deadlineMinute">
 						<option>０分</option>
 						<option>１分</option>
 						<option>２分</option>

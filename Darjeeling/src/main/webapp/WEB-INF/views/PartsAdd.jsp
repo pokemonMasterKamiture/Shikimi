@@ -14,10 +14,10 @@
 
 <table>
 <form:form modelAttribute="pard">
-	<tr><td>部品名</td><td><form:input path=""/></td></tr>
-	<tr><td>メーカー</td><td><form:input path=""/></td></tr>
-	<tr><td>単価</td><td><form:input path=""/></td></tr>
-	<tr><td>在庫数</td><td><form:input path=""/></td></tr>
+	<tr><td>部品名</td><td><form:input path="name"/></td></tr>
+	<tr><td>メーカー</td><td><form:input path="maker"/></td></tr>
+	<tr><td>単価</td><td><form:input path="price"/></td></tr>
+	<tr><td>在庫数</td><td><form:input path="stock"/></td></tr>
 	<tr><td></td><td><input type="submit" value="追加" /></td></tr>
 </form:form>
 </table>
