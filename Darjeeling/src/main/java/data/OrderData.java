@@ -1,7 +1,5 @@
 package data;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,7 +21,13 @@ public class OrderData {
 	@Column
 	String total;
 	@Column
-	Date deadline;
+	String deadlineMonth;
+	@Column
+	String deadlineDay;
+	@Column
+	String deadlineTime;
+	@Column
+	String deadlineMinute;
 	@Column
 	String progress;
 
@@ -67,13 +71,6 @@ public class OrderData {
 		this.total = total;
 	}
 
-	public Date getDeadline() {
-		return deadline;
-	}
-
-	public void setDeadline(Date deadline) {
-		this.deadline = deadline;
-	}
 
 	public String getProgress() {
 		return progress;
@@ -81,5 +78,37 @@ public class OrderData {
 
 	public void setProgress(String progress) {
 		this.progress = progress;
+	}
+
+	public String getDeadlineMonth() {
+		return deadlineMonth;
+	}
+
+	public void setDeadlineMonth(String deadlineMonth) {
+		this.deadlineMonth = deadlineMonth;
+	}
+
+	public String getDeadlineDay() {
+		return deadlineDay;
+	}
+
+	public void setDeadlineDay(String deadlineDay) {
+		this.deadlineDay = deadlineDay;
+	}
+
+	public String getDeadlineTime() {
+		return deadlineTime;
+	}
+
+	public void setDeadlineTime(String deadlineTime) {
+		this.deadlineTime = deadlineTime;
+	}
+
+	public String getDeadlineMinute() {
+		return deadlineMinute;
+	}
+
+	public void setDeadlineMinute(String deadlineMinute) {
+		this.deadlineMinute = deadlineMinute;
 	}
 }
