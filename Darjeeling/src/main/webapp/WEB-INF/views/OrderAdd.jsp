@@ -22,6 +22,10 @@
 					</form:select></td>
 			</tr>
 			<tr>
+				<td>注文数</td>
+				<td><form:input path=""/></td>
+			</tr>
+			<tr>
 				<td>発注元</td>
 				<td><form:select path="">
 						<option>ペットショップ</option>

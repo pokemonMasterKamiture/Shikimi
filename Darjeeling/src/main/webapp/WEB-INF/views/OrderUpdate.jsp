@@ -11,6 +11,7 @@
 </head>
 <body>
 <body>
+	<h1>受注更新</h1>
 	<table>
 		<form:form modelAttribute="ordd">
 			<tr>
@@ -20,6 +21,10 @@
 						<option>にわとり</option>
 						<option>ひよこ</option>
 					</form:select></td>
+			</tr>
+			<tr>
+				<td>注文数</td>
+				<td><form:input path=""/></td>
 			</tr>
 			<tr>
 				<td>発注元</td>
