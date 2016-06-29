@@ -12,9 +12,13 @@
 <body>
 <h1>商品更新</h1>
 <table>
+
 <form:form modelAttribute="prod">
 	<tr><td>商品名</td><td><form:input path=""/></td></tr>
-	<tr><td>必要パーツ</td><td><form:select path=""/></td><td><form:input path=""/>個</td></tr>
+	<!-- 材料と必要個数、はたくさん作るか、自動生成してください。 -->
+	<tr><td>必要パーツ</td><td><form:select path=""/></td>
+	<td><form:input path=""/>個</td></tr>
+	<tr><td>工程項目</td><td><form:input path=""/></td></tr>
 	<tr><td>作成期間</td><td><form:input path=""/></td></tr>
 	<tr><td>販売価格</td><td><form:input path=""/></td></tr>
 	<tr><td></td><td><input type="submit" value="追加" /></td></tr>

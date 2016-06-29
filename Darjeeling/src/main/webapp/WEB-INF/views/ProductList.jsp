@@ -46,19 +46,18 @@
 				<tr>
 					<th>商品名</th>
 					<th>価格</th>
-					<th>部品</th>
-					<th>必要数</th>
 					<th>純利益</th>
+					<th>作成期間</th>
 					<th></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr><td>鳥</td><td>2000円</td><td>かわ</td><td>2000個</td>
-				<td><a href="/st/PartsUpdate"><input type="button" value="詳細"></a></td></tr>
-				<tr><td>鶏</td><td>500円</td><td>ねぎま</td><td>1500個</td>
-				<td><a href="/st/PartsUpdate"><input type="button" value="詳細"></a></td></tr>
-				<tr><td>ひよこ</td><td>30円</td><td></td><td>800個</td>
-				<td><a href="/st/PartsUpdate"><input type="button" value="詳細"></a></td></tr>
+				<tr><td>鳥</td><td>2000円</td><td>200円</td><td>二ヶ月</td>
+				<td><a href="/st/ProductUpdate"><input type="button" value="詳細"></a></td></tr>
+				<tr><td>鶏</td><td>500円</td><td>20円</td><td>一ヶ月</td>
+				<td><a href="/st/ProductUpdate"><input type="button" value="詳細"></a></td></tr>
+				<tr><td>ひよこ</td><td>30円</td><td>1円</td><td>三日</td>
+				<td><a href="/st/ProductUpdate"><input type="button" value="詳細"></a></td></tr>
 			</tbody>
 		</table>
 	</div>
