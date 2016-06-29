@@ -41,7 +41,7 @@ public class HomeController {
         model.addAttribute("cd", cd);
         return "CustomerList";
     }
-	
+
 	   @RequestMapping(value = "/OrderAdd", method = RequestMethod.GET)
 	    public String OrderAdd(Model model) {
 	        OrderData ordd = new OrderData();
@@ -61,7 +61,7 @@ public class HomeController {
 
 
 
-	@RequestMapping(value = "/OrdersList", method = RequestMethod.GET)
+	@RequestMapping(value = "/OrderList", method = RequestMethod.GET)
     public String OrderList(Model model) {
 
         return "OrdersList";
@@ -84,6 +84,12 @@ public class HomeController {
         return "PartsUpdate";
     }
 
+	@RequestMapping(value = "/PartsList", method = RequestMethod.GET)
+    public String PartsList(Model model) {
+
+        return "PartsList";
+    }
+
 	@RequestMapping(value = "/ProductAdd", method = RequestMethod.GET)
     public String ProductAdd(Model model) {
 	    ProductData prod = new ProductData();
@@ -98,8 +104,24 @@ public class HomeController {
         model.addAttribute("prod", prod);
 
 
-        return "CustomerAdd";
+        return "ProductUpdate";
     }
+
+	@RequestMapping(value = "/ProductList", method = RequestMethod.GET)
+    public String ProductList(Model model) {
+
+        return "ProductList";
+    }
+
+	@RequestMapping(value = "/ProgressUpdate", method = RequestMethod.GET)
+    public String ProgressUpdate(Model model) {
+        OrderData ordd = new OrderData();
+        model.addAttribute("ordd", ordd);
+
+
+        return "ProgressUpdate";
+    }
+
 
 	@RequestMapping(value = "/ProgressList", method = RequestMethod.GET)
     public String ProgressList(Model model) {
@@ -108,13 +130,13 @@ public class HomeController {
     }
 
 	@RequestMapping(value = "/Receiver", method = RequestMethod.GET)
-    public String Shipment(Model model) {
+    public String Receiver(Model model) {
 
         return "Receiver";
     }
 
 	@RequestMapping(value = "/ReceiverAdd", method = RequestMethod.GET)
-    public String ShipmentAdd(Model model) {
+    public String ReceiverAdd(Model model) {
 	    ReceiverData recd = new ReceiverData();
         model.addAttribute("recd", recd);
 
@@ -122,7 +144,7 @@ public class HomeController {
     }
 
 	@RequestMapping(value = "/ReceiverUpdate", method = RequestMethod.GET)
-    public String ShipmentUpdate(Model model) {
+    public String ReceiverUpdate(Model model) {
 	    ReceiverData recd = new ReceiverData();
         model.addAttribute("recd", recd);
 
@@ -130,10 +152,17 @@ public class HomeController {
     }
 
 	@RequestMapping(value = "/ReceiverComplete", method = RequestMethod.GET)
-    public String ShipmentComplete(Model model) {
+    public String ReceiverComplete(Model model) {
 
         return "ReceiverComplete";
     }
+
+	@RequestMapping(value = "/ReceiverList", method = RequestMethod.GET)
+    public String ReceiverList(Model model) {
+
+        return "ReceiverList";
+    }
+
 
 	@RequestMapping(value = "/Top", method = RequestMethod.GET)
     public String Top(Model model) {

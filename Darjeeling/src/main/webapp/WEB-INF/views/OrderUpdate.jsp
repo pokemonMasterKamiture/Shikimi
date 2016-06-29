@@ -12,7 +12,7 @@
 <body>
 <body>
 	<table>
-		<form:form modelAttribute="sd">
+		<form:form modelAttribute="ordd">
 			<tr>
 				<td>表品名</td>
 				<td><form:select path="">

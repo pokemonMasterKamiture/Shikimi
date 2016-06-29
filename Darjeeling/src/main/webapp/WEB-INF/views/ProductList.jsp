@@ -36,27 +36,28 @@
 		});
 	});
 </script>
-<title>部品一覧</title>
+<title>商品一覧</title>
 </head>
 <body>
-<h1>部品一覧</h1>
+<h1>商品一覧</h1>
 	<div class="container">
 		<table id="example" class="display" cellspacing="0" width="100%">
 			<thead>
 				<tr>
-					<th>部品名</th>
-					<th>メーカー</th>
-					<th>単価</th>
-					<th>在庫数</th>
+					<th>商品名</th>
+					<th>価格</th>
+					<th>部品</th>
+					<th>必要数</th>
+					<th>純利益</th>
 					<th></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr><td>かわ</td><td>（株）さいたま</td><td>10円/１00個</td><td>2000個</td>
+				<tr><td>鳥</td><td>2000円</td><td>かわ</td><td>2000個</td>
 				<td><a href="/st/PartsUpdate"><input type="button" value="詳細"></a></td></tr>
-				<tr><td>ねぎま</td><td>（株）さいたま</td><td>8円/１00個</td><td>1500個</td>
+				<tr><td>鶏</td><td>500円</td><td>ねぎま</td><td>1500個</td>
 				<td><a href="/st/PartsUpdate"><input type="button" value="詳細"></a></td></tr>
-				<tr><td>つくね</td><td>（株）さいたま</td><td>10円/１00個</td><td>800個</td>
+				<tr><td>ひよこ</td><td>30円</td><td></td><td>800個</td>
 				<td><a href="/st/PartsUpdate"><input type="button" value="詳細"></a></td></tr>
 			</tbody>
 		</table>

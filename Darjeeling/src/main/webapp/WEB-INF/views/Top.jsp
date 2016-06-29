@@ -12,11 +12,11 @@
 <body>
 	<h1>top画面</h1>
 	<table>
-	<tr><td><a href="/takahashi/OrderAdd"><input type="button" value="受注登録"></a></td>
-	<td><a href="/takahashi/OrdersList"><input type="button" value="受注一覧"></a></td></tr>
-	<tr><td><a href="/takahashi/CustomerAdd"><input type="button" value="顧客登録"></a></td>
-	<td><a href="/takahashi/ProductAdd"><input type="button" value="商品登録"></a></td></tr>
-	<tr><td><a href="/takahashi/PartsAdd"><input type="button" value="部品登録"></a></td></tr>
+	<tr><td><a href="/st/OrderAdd"><input type="button" value="受注登録"></a></td>
+	<td><a href="/st/OrdersList"><input type="button" value="受注一覧"></a></td></tr>
+	<tr><td><a href="/st/CustomerAdd"><input type="button" value="顧客登録"></a></td>
+	<td><a href="/st/ProductAdd"><input type="button" value="商品登録"></a></td></tr>
+	<tr><td><a href="/st/PartsAdd"><input type="button" value="部品登録"></a></td></tr>
 	</table>
 </body>
 </html>
