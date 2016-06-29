@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Refresh" content="0;URL=/takahashi/Top">
+<meta http-equiv="Refresh" content="0;URL=/st/Top">
 <title>Home</title>
 </head>
 <body>

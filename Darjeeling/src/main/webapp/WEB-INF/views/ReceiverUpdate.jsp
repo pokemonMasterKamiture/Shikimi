@@ -7,17 +7,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>出荷先登録</title>
+<title>出荷先更新</title>
 </head>
 <body>
-<h1>出荷先追加</h1>
+<h1>出荷先更新</h1>
 
 <table>
-<form:form modelAttribute="sd">
+<form:form modelAttribute="recd">
 	<tr><td>名前</td><td><form:input path=""/></td></tr>
 	<tr><td>住所</td><td><form:input path=""/></td></tr>
 	<tr><td>電話番号</td><td><form:input path=""/></td></tr>
-	<tr><td></td><td><input type="submit" value="追加" /></td></tr>
+	<tr><td></td><td><input type="submit" value="更新" /></td></tr>
 </form:form>
 </table>
 </body>

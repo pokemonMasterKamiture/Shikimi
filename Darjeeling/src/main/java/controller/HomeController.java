@@ -6,7 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import data.CustomerData;
+import data.OrderData;
+import data.PartsData;
 import data.ProductData;
+import data.ReceiverData;
 
 @Controller
 public class HomeController {
@@ -32,6 +35,32 @@ public class HomeController {
         return "CustomerUpdate";
     }
 
+	@RequestMapping(value = "/CustomerList", method = RequestMethod.GET)
+    public String CustomerList(Model model) {
+        CustomerData cd = new CustomerData();
+        model.addAttribute("cd", cd);
+        return "CustomerList";
+    }
+	
+	   @RequestMapping(value = "/OrderAdd", method = RequestMethod.GET)
+	    public String OrderAdd(Model model) {
+	        OrderData ordd = new OrderData();
+	        model.addAttribute("ordd", ordd);
+
+	        return "OrderAdd";
+	    }
+
+	    @RequestMapping(value = "/OrderUpdate", method = RequestMethod.GET)
+	    public String OrderUpdate(Model model) {
+	        OrderData ordd = new OrderData();
+	        model.addAttribute("ordd", ordd);
+
+	        return "OrderUpdate";
+	    }
+
+
+
+
 	@RequestMapping(value = "/OrdersList", method = RequestMethod.GET)
     public String OrderList(Model model) {
 
@@ -40,16 +69,16 @@ public class HomeController {
 
 	@RequestMapping(value = "/PartsAdd", method = RequestMethod.GET)
     public String PartAdd(Model model) {
-	    //PartsData pard = new PartsData();
-        //model.addAttribute("pard", pard);
+	    PartsData pard = new PartsData();
+        model.addAttribute("pard", pard);
 
         return "PartsAdd";
     }
 
 	@RequestMapping(value = "/PartsUpdate", method = RequestMethod.GET)
     public String PartsUpdate(Model model) {
-	    //PartsData pard = new PartsData();
-        //model.addAttribute("pard", pard);
+	    PartsData pard = new PartsData();
+        model.addAttribute("pard", pard);
 
 
         return "PartsUpdate";
@@ -64,8 +93,10 @@ public class HomeController {
     }
 
 	@RequestMapping(value = "/ProductUpdate", method = RequestMethod.GET)
-    public String ProductUpdate(Model model,ProductData prod) {
+    public String ProductUpdate(Model model) {
+	    ProductData prod = new ProductData();
         model.addAttribute("prod", prod);
+
 
         return "CustomerAdd";
     }
@@ -83,15 +114,17 @@ public class HomeController {
     }
 
 	@RequestMapping(value = "/ReceiverAdd", method = RequestMethod.GET)
-    public String ShipmentAdd(Model model,ShipmentData sd) {
-        model.addAttribute("sd", sd);
+    public String ShipmentAdd(Model model) {
+	    ReceiverData recd = new ReceiverData();
+        model.addAttribute("recd", recd);
 
         return "ReceiverAdd";
     }
 
 	@RequestMapping(value = "/ReceiverUpdate", method = RequestMethod.GET)
-    public String ShipmentUpdate(Model model,ShipmentData sd) {
-        model.addAttribute("sd", sd);
+    public String ShipmentUpdate(Model model) {
+	    ReceiverData recd = new ReceiverData();
+        model.addAttribute("recd", recd);
 
         return "ReceiverUpdate";
     }
@@ -107,21 +140,6 @@ public class HomeController {
 
         return "Top";
     }
-
-	@RequestMapping(value = "/OrderAdd", method = RequestMethod.GET)
-    public String OrderAdd(Model model,ShipmentData sd) {
-        model.addAttribute("sd", sd);
-
-        return "OrderAdd";
-    }
-
-	@RequestMapping(value = "/OrderUpdate", method = RequestMethod.GET)
-    public String OrderUpdate(Model model,ShipmentData sd) {
-        model.addAttribute("sd", sd);
-
-        return "OrderUpdate";
-    }
-
 
 
 }
