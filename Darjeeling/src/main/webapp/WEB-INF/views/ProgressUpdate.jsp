@@ -13,7 +13,7 @@
 <h1>進捗更新</h1>
 
 <table>
-<form:form modelAttribute="ordd">
+<form:form modelAttribute="orderData">
 	ここに工程項目をずらっとならべる。
 	<%-- <form:checkboxes items="" path=""/> --%>
 

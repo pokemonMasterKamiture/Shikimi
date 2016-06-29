@@ -2,9 +2,13 @@ package controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import dao.CustDaoImpl;
+import dao.Dao;
+import dao.OrderDaoImpl;
 import data.CustomerData;
 import data.OrderData;
 import data.PartsData;
@@ -22,11 +26,18 @@ public class HomeController {
 
 	@RequestMapping(value = "/CustomerAdd", method = RequestMethod.GET)
     public String CustomerAdd(Model model) {
-	    CustomerData cd = new CustomerData();
-	    model.addAttribute("cd", cd);
-
+		CustomerData cd = new CustomerData();
+		model.addAttribute("customerData", cd);
         return "CustomerAdd";
     }
+
+	@RequestMapping(value = "/CustomerAdd", method = RequestMethod.POST)
+	public String PostCustomerAdd(@ModelAttribute CustomerData cd, Model model) {
+		CustDaoImpl daoa = new CustDaoImpl();
+		daoa.add(cd);
+
+		return "CustomerAdd";
+	}
 
 	@RequestMapping(value = "/CustomerUpdate", method = RequestMethod.GET)
     public String CustomerUpdate(Model model) {
@@ -45,10 +56,18 @@ public class HomeController {
 	   @RequestMapping(value = "/OrderAdd", method = RequestMethod.GET)
 	    public String OrderAdd(Model model) {
 	        OrderData ordd = new OrderData();
-	        model.addAttribute("ordd", ordd);
+		model.addAttribute("orderData", ordd);
 
 	        return "OrderAdd";
 	    }
+
+	@RequestMapping(value = "/OrderAdd", method = RequestMethod.POST)
+	public String PostOrderAdd(@ModelAttribute OrderData od, Model model) {
+		Dao<OrderData> dao = new OrderDaoImpl();
+		dao.add(od);
+
+		return "OrderAdd";
+	}
 
 	    @RequestMapping(value = "/OrderUpdate", method = RequestMethod.GET)
 	    public String OrderUpdate(Model model) {

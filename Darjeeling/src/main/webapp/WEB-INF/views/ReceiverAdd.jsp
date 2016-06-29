@@ -13,10 +13,11 @@
 <h1>出荷先追加</h1>
 
 <table>
-<form:form modelAttribute="recd">
-	<tr><td>名前</td><td><form:input path=""/></td></tr>
-	<tr><td>住所</td><td><form:input path=""/></td></tr>
-	<tr><td>電話番号</td><td><form:input path=""/></td></tr>
+<form:form modelAttribute="receiverData">
+	<tr><td>名前</td><td><form:input path="name"/></td></tr>
+	<tr><td>住所</td><td><form:input path="address"/></td></tr>
+	<tr><td>電話番号</td><td><form:input path="tel"/></td></tr>
+	<tr><td>被信頼度（想定）</td><td><form:input path="love"/></td></tr>
 	<tr><td></td><td><input type="submit" value="追加" /></td></tr>
 </form:form>
 </table>
