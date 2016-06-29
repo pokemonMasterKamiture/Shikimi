@@ -13,7 +13,7 @@
 <h1>商品追加</h1>
 
 <table>
-<form:form modelAttribute="prod">
+<form:form modelAttribute="productData">
 	<tr><td>商品名</td><td><form:input path="name"/></td></tr>
 	<tr><td>価格</td><td><form:input path="price"/></td></tr>
 	<!-- 材料と必要個数、工程項目はたくさん作るか、自動生成してください。 -->
