@@ -7,16 +7,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>商品更新</title>
+<title>商品追加</title>
 </head>
 <body>
-<h1>商品更新</h1>
+<h1>商品追加</h1>
+
 <table>
 <form:form modelAttribute="prod">
-	<tr><td>商品名</td><td><form:input path=""/></td></tr>
-	<tr><td>必要パーツ</td><td><form:select path=""/></td><td><form:input path=""/>個</td></tr>
-	<tr><td>作成期間</td><td><form:input path=""/></td></tr>
-	<tr><td>販売価格</td><td><form:input path=""/></td></tr>
+	<tr><td>名前</td><td><form:input path=""/></td></tr>
+	<tr><td>単価</td><td><form:input path=""/></td></tr>
+	<tr><td>材料</td><td><form:input path=""/></td></tr>
+	<tr><td>必要個数</td><td><form:input path=""/></td></tr>
+	<tr><td>純利益</td><td><form:input path=""/></td></tr>
 	<tr><td></td><td><input type="submit" value="追加" /></td></tr>
 </form:form>
 </table>

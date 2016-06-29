@@ -36,10 +36,10 @@
 		});
 	});
 </script>
-<title>部品一覧</title>
+<title>出荷先一覧</title>
 </head>
 <body>
-<h1>部品一覧</h1>
+<h1>出荷先一覧</h1>
 	<div class="container">
 		<table id="example" class="display" cellspacing="0" width="100%">
 			<thead>
