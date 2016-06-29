@@ -14,11 +14,10 @@
 
 <table>
 <form:form modelAttribute="ordd">
-	<tr><td>名前</td><td><form:input path=""/></td></tr>
-	<tr><td>住所</td><td><form:input path=""/></td></tr>
-	<tr><td>電話番号</td><td><form:input path=""/></td></tr>
-	<tr><td>取引限界額</td><td><form:input path=""/></td></tr>
-	<tr><td></td><td><input type="submit" value="追加" /></td></tr>
+	ここに工程項目をずらっとならべる。
+	<%-- <form:checkboxes items="" path=""/> --%>
+
+	<tr><td></td><td><input type="submit" value="更新" /></td></tr>
 </form:form>
 </table>
 </body>

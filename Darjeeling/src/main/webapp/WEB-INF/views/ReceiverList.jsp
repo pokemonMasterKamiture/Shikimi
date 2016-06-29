@@ -44,20 +44,19 @@
 		<table id="example" class="display" cellspacing="0" width="100%">
 			<thead>
 				<tr>
-					<th>部品名</th>
-					<th>メーカー</th>
-					<th>単価</th>
-					<th>在庫数</th>
+					<th>名前</th>
+					<th>住所</th>
+					<th>電話番号</th>
 					<th></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr><td>かわ</td><td>（株）さいたま</td><td>10円/１00個</td><td>2000個</td>
-				<td><a href="/st/PartsUpdate"><input type="button" value="詳細"></a></td></tr>
-				<tr><td>ねぎま</td><td>（株）さいたま</td><td>8円/１00個</td><td>1500個</td>
-				<td><a href="/st/PartsUpdate"><input type="button" value="詳細"></a></td></tr>
-				<tr><td>つくね</td><td>（株）さいたま</td><td>10円/１00個</td><td>800個</td>
-				<td><a href="/st/PartsUpdate"><input type="button" value="詳細"></a></td></tr>
+				<tr><td>牧場</td><td>さいたま</td><td>0120-441-222</td>
+				<td><a href="/st/ReceiverUpdate"><input type="button" value="詳細"></a></td></tr>
+				<tr><td>ペットショップ</td><td>さいたま</td><td>0120-117-117</td>
+				<td><a href="/st/ReceiverUpdate"><input type="button" value="詳細"></a></td></tr>
+				<tr><td>鳥使い</td><td>さいたま</td><td>0120-698-1147</td>
+				<td><a href="/st/ReceiverUpdate"><input type="button" value="詳細"></a></td></tr>
 			</tbody>
 		</table>
 	</div>

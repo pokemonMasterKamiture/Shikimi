@@ -11,7 +11,7 @@ import javax.persistence.Query;
 import data.CustomerData;
 
 public class CustDaoImpl implements Dao<CustomerData> {
-	private static final long serialVersionUID = 1L;
+
 	private static EntityManagerFactory factory = Persistence.createEntityManagerFactory("persistenceUnit");
 	@Override
 	public List<CustomerData> getAll() {
