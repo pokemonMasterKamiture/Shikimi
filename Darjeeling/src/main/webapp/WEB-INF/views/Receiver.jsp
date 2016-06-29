@@ -12,7 +12,7 @@
 <body>
 本当に出荷する？
 <%-- <form:form modelAttribute=""></form:form> --%>
-<form action="/takahashi/ShipmentComplete">
+<form action="/st/ShipmentComplete">
 	<input type="submit" value="出荷"/>
 </form>
 </body>

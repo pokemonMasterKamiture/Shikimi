@@ -36,30 +36,28 @@
 		});
 	});
 </script>
-<title>受注一覧</title>
+<title>顧客一覧</title>
 </head>
 <body>
-<h1>受注一覧</h1>
+<h1>顧客一覧</h1>
 	<div class="container">
 		<table id="example" class="display" cellspacing="0" width="100%">
 			<thead>
 				<tr>
-					<th>商品名</th>
-					<th>発注元</th>
-					<th>出荷先</th>
-					<th>期限</th>
-					<th>進捗状況</th>
+					<th>顧客名</th>
+					<th>住所</th>
+					<th>電話番号</th>
+					<th>取引限度額</th>
 					<th></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr><td>鳥</td><td>鳥使い</td><td>鳥使い</td><td>06/30</td><td>50%</td>
-				<td><a href="/st/ProgressList"><input type="button" value="詳細"></a></td></tr>
-				<tr><td>ひよこ</td><td>投資家</td><td>牧場</td><td>07/07</td><td>80%</td>
-				<td><a href="/st/ProgressList"><input type="button" value="詳細"></a></td></tr>
-				<tr><td>鶏</td><td>ペットショップ</td><td>ペットショップ　そこ店</td><td>07/01</td>
-				<td><a href="/st/Shipment"><input type="button" value="出荷"></a></td>
-				<td><a href="/st/ProgressList"><input type="button" value="詳細"></a></td></tr>
+				<tr><td>ペットショップ</td><td>さいたま</td><td>0120-117-117</td><td>2000万円</td>
+				<td><a href="/st/CustomerUpdate"><input type="button" value="詳細"></a></td></tr>
+				<tr><td>投資家</td><td>さいたま</td><td>0120-117-117</td><td>500万円</td>
+				<td><a href="/st/CustomerUpdate"><input type="button" value="詳細"></a></td></tr>
+				<tr><td>鳥使い</td><td>さいたま</td><td>0120-117-117</td><td>50万円</td>
+				<td><a href="/st/CustomerUpdate"><input type="button" value="詳細"></a></td></tr>
 			</tbody>
 		</table>
 	</div>
