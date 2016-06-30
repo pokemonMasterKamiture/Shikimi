@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import dao.CustDaoImpl;
 import dao.DataAccessObject;
 import dao.OrderDaoImpl;
+import dao.PartsDaoImpl;
 import data.CustomerData;
 import data.OrderData;
 import data.PartsData;
@@ -93,11 +94,19 @@ public class HomeController {
     }
 
 	@RequestMapping(value = "/PartsAdd", method = RequestMethod.GET)
-    public String PartAdd(Model model) {
-	    PartsData pard = new PartsData();
-        model.addAttribute("pard", pard);
+    public String PartsAdd(Model model) {
+	    PartsData partsData = new PartsData();
+        model.addAttribute("partsData", partsData);
 
         return "PartsAdd";
+    }
+
+	@RequestMapping(value = "/PartsAdd", method = RequestMethod.POST)
+    public String PostPartsAdd(@ModelAttribute PartsData partsd, Model model) {
+        DataAccessObject<PartsData> dao = new PartsDaoImpl();
+        dao.add(partsd);
+
+        return "redirect:/PartsList";
     }
 
 	@RequestMapping(value = "/PartsUpdate", method = RequestMethod.GET)
@@ -111,7 +120,9 @@ public class HomeController {
 
 	@RequestMapping(value = "/PartsList", method = RequestMethod.GET)
     public String PartsList(Model model) {
-
+	    DataAccessObject<PartsData> dao = new PartsDaoImpl();
+        List<PartsData> list = dao.getAll();
+        model.addAttribute("partsData", list);
         return "PartsList";
     }
 

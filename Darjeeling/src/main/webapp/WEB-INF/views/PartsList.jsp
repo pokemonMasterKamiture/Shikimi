@@ -55,6 +55,16 @@
 					</tr>
 				</thead>
 				<tbody>
+					<c:forEach var="list" items="${partsData}">
+						<tr>
+							<td>${list.name}</td>
+							<td>${list.maker}</td>
+							<td>${list.price}</td>
+							<td>${list.stock}</td>
+							<td><a href="/st/PartsUpdate"><input type="button"
+									value="詳細"></a></td>
+						</tr>
+					</c:forEach>
 					<tr>
 						<td>かわ</td>
 						<td>（株）さいたま</td>

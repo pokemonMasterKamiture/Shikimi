@@ -16,6 +16,8 @@ public class PartsData {
 	@Column
 	String name;
 	@Column
+    String maker;
+	@Column
 	Long price;
 	@Column
 	Long stock;
@@ -36,7 +38,15 @@ public class PartsData {
 		this.name = name;
 	}
 
-	public Long getPrice() {
+	public String getMaker() {
+        return maker;
+    }
+
+    public void setMaker(String maker) {
+        this.maker = maker;
+    }
+
+    public Long getPrice() {
 		return price;
 	}
 
