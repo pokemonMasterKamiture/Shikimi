@@ -18,28 +18,28 @@
 			<form:form modelAttribute="orderData">
 				<tr>
 					<td>発注元</td>
-					<td><form:select path="cust">
-							<option>ペットショップ</option>
+					<td><%-- <form:select path="customerdata">
+							<option value="1">1</option>
 							<option>鳥使い</option>
 							<option>投資家</option>
-						</form:select></td>
+						</form:select> --%></td>
 				</tr>
 				<tr>
 					<td>出荷先</td>
-					<td><form:select path="receiver">
-							<option>ペットショップ：ここ店</option>
+					<td><%-- <form:select path="receiverdata">
+							<option value="1">1</option>
 							<option>ペットショップ：あそこ店</option>
 							<option>鳥使い</option>
 							<option>牧場</option>
-						</form:select></td>
+						</form:select> --%></td>
 				</tr>
 				<tr>
-					<td>表品名</td>
-					<td><form:select path="product">
-							<option>とり</option>
+					<td>(｀･3･´)品名</td>
+					<td><%-- <form:select path="productdata">
+							<option value="1">1</option>
 							<option>にわとり</option>
 							<option>ひよこ</option>
-						</form:select></td>
+						</form:select> --%></td>
 				</tr>
 				<tr>
 					<td>注文数</td>

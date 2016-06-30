@@ -1,10 +1,14 @@
 package data;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class ReceiverData {
@@ -20,6 +24,8 @@ public class ReceiverData {
 	String tel;
 	@Column
 	String love;
+	@OneToMany(mappedBy = "receiverdata", cascade = CascadeType.ALL)
+	List<OrderData> orderdata;
 
 	public Long getId() {
 		return id;

@@ -14,8 +14,6 @@ public class OrderData {
 	@Column
 	Long id;
 	@Column
-	String product;
-	@Column
 	String total;// 数
 	@Column
 	String deadlineMonth;
@@ -28,9 +26,14 @@ public class OrderData {
 	@Column
 	String progress;
 	@ManyToOne
+	@Column
 	CustomerData customerdata;
 	@ManyToOne
+	@Column
 	ReceiverData receiverdata;
+	@ManyToOne
+	@Column
+	ProductData productdata;
 
 	public Long getId() {
 		return id;
@@ -41,12 +44,11 @@ public class OrderData {
 	}
 
 
-	public String getProduct() {
-		return product;
-	}
-
-	public void setProduct(String product) {
-		this.product = product;
+	public OrderData() {
+		super();
+		customerdata = new CustomerData();
+		receiverdata = new ReceiverData();
+		productdata = new ProductData();
 	}
 
 	public String getTotal() {
@@ -95,5 +97,29 @@ public class OrderData {
 
 	public void setDeadlineMinute(String deadlineMinute) {
 		this.deadlineMinute = deadlineMinute;
+	}
+
+	public CustomerData getCustomerdata() {
+		return customerdata;
+	}
+
+	public void setCustomerdata(CustomerData customerdata) {
+		this.customerdata = customerdata;
+	}
+
+	public ReceiverData getReceiverdata() {
+		return receiverdata;
+	}
+
+	public void setReceiverdata(ReceiverData receiverdata) {
+		this.receiverdata = receiverdata;
+	}
+
+	public ProductData getProductdata() {
+		return productdata;
+	}
+
+	public void setProductdata(ProductData productdata) {
+		this.productdata = productdata;
 	}
 }
