@@ -50,17 +50,22 @@
 					<th>出荷先</th>
 					<th>期限</th>
 					<th>進捗状況</th>
-					<th></th>
+
 				</tr>
 			</thead>
 			<tbody>
-				<tr><td>鳥</td><td>1羽</td><td>鳥使い</td><td>鳥使い</td><td>06/30</td><td>50%</td>
+			<c:forEach var="obj" items="${orderlist}">
+			<tr><td>ひよこ</td><td>1000羽</td><td>投資家</td><td>牧場</td><td>07/07</td><td>80%</td>
+				<!-- <tr><td>鳥</td><td>1羽</td><td>鳥使い</td><td>鳥使い</td><td>06/30</td><td>50%</td>
 				<td><a href="/st/ProgressList"><input type="button" value="詳細"></a></td></tr>
 				<tr><td>ひよこ</td><td>1000羽</td><td>投資家</td><td>牧場</td><td>07/07</td><td>80%</td>
 				<td><a href="/st/ProgressList"><input type="button" value="詳細"></a></td></tr>
 				<tr><td>鶏</td><td>10羽</td><td>ペットショップ</td><td>ペットショップ　そこ店</td><td>07/01</td>
 				<td><a href="/st/Shipment"><input type="button" value="出荷"></a></td>
-				<td><a href="/st/ProgressList"><input type="button" value="詳細"></a></td></tr>
+				<td><a href="/st/ProgressList"><input type="button" value="詳細"></a></td></tr> -->
+
+
+			</c:forEach>
 			</tbody>
 		</table>
 	</div>

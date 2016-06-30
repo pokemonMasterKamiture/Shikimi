@@ -52,12 +52,12 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr><td>ペットショップ</td><td>さいたま</td><td>0120-117-117</td><td>2000万円</td>
+				<c:forEach var="inage" items="${custdata}">
+
+
+				<tr><td>${inage.name}</td><td>${inage.address}</td><td>${inage.tel}</td><td>${inage.love}</td>
 				<td><a href="/st/CustomerUpdate"><input type="button" value="詳細"></a></td></tr>
-				<tr><td>投資家</td><td>さいたま</td><td>0120-117-117</td><td>500万円</td>
-				<td><a href="/st/CustomerUpdate"><input type="button" value="詳細"></a></td></tr>
-				<tr><td>鳥使い</td><td>さいたま</td><td>0120-117-117</td><td>50万円</td>
-				<td><a href="/st/CustomerUpdate"><input type="button" value="詳細"></a></td></tr>
+				</c:forEach>
 			</tbody>
 		</table>
 	</div>

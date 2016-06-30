@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -36,7 +38,7 @@ public class HomeController {
 		DataAccessObject<CustomerData> dao = new CustDaoImpl();
 		dao.add(cd);
 
-		return "CustomerAdd";
+		return "redirect:/CustomerList";
 	}
 
 	@RequestMapping(value = "/CustomerUpdate", method = RequestMethod.GET)
@@ -48,8 +50,9 @@ public class HomeController {
 
 	@RequestMapping(value = "/CustomerList", method = RequestMethod.GET)
     public String CustomerList(Model model) {
-        CustomerData cd = new CustomerData();
-        model.addAttribute("cd", cd);
+		DataAccessObject<CustomerData> dao = new CustDaoImpl();
+		List<CustomerData> list = dao.getAll();
+		model.addAttribute("custdata", list);
         return "CustomerList";
     }
 
@@ -66,7 +69,7 @@ public class HomeController {
 		DataAccessObject<OrderData> dao = new OrderDaoImpl();
 		dao.add(od);
 
-		return "OrderAdd";
+		return "redirect:/OrderList";
 	}
 
 	    @RequestMapping(value = "/OrderUpdate", method = RequestMethod.GET)
@@ -82,8 +85,11 @@ public class HomeController {
 
 	@RequestMapping(value = "/OrderList", method = RequestMethod.GET)
     public String OrderList(Model model) {
+		DataAccessObject<OrderData> dao = new OrderDaoImpl();
+		List<OrderData> list = dao.getAll();
+		model.addAttribute("orderlist", list);
 
-        return "OrdersList";
+		return "OrdersList";
     }
 
 	@RequestMapping(value = "/PartsAdd", method = RequestMethod.GET)
