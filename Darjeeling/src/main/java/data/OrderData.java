@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class OrderData {
@@ -13,13 +14,9 @@ public class OrderData {
 	@Column
 	Long id;
 	@Column
-	String cust;
-	@Column
-	String receiver;
-	@Column
 	String product;
 	@Column
-	String total;
+	String total;// 数
 	@Column
 	String deadlineMonth;
 	@Column
@@ -30,6 +27,10 @@ public class OrderData {
 	String deadlineMinute;
 	@Column
 	String progress;
+	@ManyToOne
+	CustomerData customerdata;
+	@ManyToOne
+	ReceiverData receiverdata;
 
 	public Long getId() {
 		return id;
@@ -39,21 +40,6 @@ public class OrderData {
 		this.id = id;
 	}
 
-	public String getCust() {
-		return cust;
-	}
-
-	public void setCust(String cust) {
-		this.cust = cust;
-	}
-
-	public String getReceiver() {
-		return receiver;
-	}
-
-	public void setReceiver(String receiver) {
-		this.receiver = receiver;
-	}
 
 	public String getProduct() {
 		return product;
@@ -70,7 +56,6 @@ public class OrderData {
 	public void setTotal(String total) {
 		this.total = total;
 	}
-
 
 	public String getProgress() {
 		return progress;
