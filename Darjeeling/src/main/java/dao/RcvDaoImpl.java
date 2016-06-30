@@ -11,7 +11,7 @@ import javax.persistence.Query;
 import data.ReceiverData;
 
 
-public class RcvDaoImpl implements Dao<ReceiverData> {
+public class RcvDaoImpl implements DataAccessObject<ReceiverData> {
 
 	private static final long serialVersionUID = 1L;
 	private static EntityManagerFactory factory = Persistence.createEntityManagerFactory("persistenceUnit");

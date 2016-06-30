@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import dao.CustDaoImpl;
-import dao.Dao;
+import dao.DataAccessObject;
 import dao.OrderDaoImpl;
 import data.CustomerData;
 import data.OrderData;
@@ -33,8 +33,8 @@ public class HomeController {
 
 	@RequestMapping(value = "/CustomerAdd", method = RequestMethod.POST)
 	public String PostCustomerAdd(@ModelAttribute CustomerData cd, Model model) {
-		CustDaoImpl daoa = new CustDaoImpl();
-		daoa.add(cd);
+		DataAccessObject<CustomerData> dao = new CustDaoImpl();
+		dao.add(cd);
 
 		return "CustomerAdd";
 	}
@@ -63,7 +63,7 @@ public class HomeController {
 
 	@RequestMapping(value = "/OrderAdd", method = RequestMethod.POST)
 	public String PostOrderAdd(@ModelAttribute OrderData od, Model model) {
-		Dao<OrderData> dao = new OrderDaoImpl();
+		DataAccessObject<OrderData> dao = new OrderDaoImpl();
 		dao.add(od);
 
 		return "OrderAdd";

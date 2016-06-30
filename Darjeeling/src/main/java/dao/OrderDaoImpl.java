@@ -10,7 +10,7 @@ import javax.persistence.Query;
 
 import data.OrderData;
 
-public class OrderDaoImpl implements Dao<OrderData> {
+public class OrderDaoImpl implements DataAccessObject<OrderData> {
 
 	private static final long serialVersionUID = 1L;
 	private static EntityManagerFactory factory = Persistence.createEntityManagerFactory("persistenceUnit");

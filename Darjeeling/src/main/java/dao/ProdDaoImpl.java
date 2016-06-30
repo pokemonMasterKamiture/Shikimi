@@ -11,7 +11,7 @@ import javax.persistence.Query;
 import data.ProductData;
 
 
-public class ProdDaoImpl implements Dao<ProductData> {
+public class ProdDaoImpl implements DataAccessObject<ProductData> {
 
 	private static final long serialVersionUID = 1L;
 	private static EntityManagerFactory factory = Persistence.createEntityManagerFactory("persistenceUnit");

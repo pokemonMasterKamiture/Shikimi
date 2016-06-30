@@ -10,7 +10,7 @@ import javax.persistence.Query;
 
 import data.CustomerData;
 
-public class CustDaoImpl implements Dao<CustomerData> {
+public class CustDaoImpl implements DataAccessObject<CustomerData> {
 
 	private static EntityManagerFactory factory = Persistence.createEntityManagerFactory("persistenceUnit");
 	@Override
