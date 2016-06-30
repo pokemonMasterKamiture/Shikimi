@@ -2,8 +2,12 @@ package controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.ServletRequestDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,9 +20,16 @@ import data.OrderData;
 import data.PartsData;
 import data.ProductData;
 import data.ReceiverData;
+import propertyeditor.CustPropertyEdit;
 
 @Controller
 public class HomeController {
+
+	// propertyedit
+	@InitBinder
+	protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) throws Exception {
+		binder.registerCustomEditor(CustomerData.class, new CustPropertyEdit());
+	}
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
@@ -27,11 +38,11 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/CustomerAdd", method = RequestMethod.GET)
-    public String CustomerAdd(Model model) {
+	public String CustomerAdd(Model model) {
 		CustomerData cd = new CustomerData();
 		model.addAttribute("customerData", cd);
-        return "CustomerAdd";
-    }
+		return "CustomerAdd";
+	}
 
 	@RequestMapping(value = "/CustomerAdd", method = RequestMethod.POST)
 	public String PostCustomerAdd(@ModelAttribute CustomerData cd, Model model) {
@@ -42,27 +53,27 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/CustomerUpdate", method = RequestMethod.GET)
-    public String CustomerUpdate(Model model) {
-	    CustomerData cd = new CustomerData();
-        model.addAttribute("cd", cd);
-        return "CustomerUpdate";
-    }
+	public String CustomerUpdate(Model model) {
+		CustomerData cd = new CustomerData();
+		model.addAttribute("cd", cd);
+		return "CustomerUpdate";
+	}
 
 	@RequestMapping(value = "/CustomerList", method = RequestMethod.GET)
-    public String CustomerList(Model model) {
+	public String CustomerList(Model model) {
 		DataAccessObject<CustomerData> dao = new CustDaoImpl();
 		List<CustomerData> list = dao.getAll();
 		model.addAttribute("custdata", list);
-        return "CustomerList";
-    }
+		return "CustomerList";
+	}
 
-	   @RequestMapping(value = "/OrderAdd", method = RequestMethod.GET)
-	    public String OrderAdd(Model model) {
-	        OrderData ordd = new OrderData();
+	@RequestMapping(value = "/OrderAdd", method = RequestMethod.GET)
+	public String OrderAdd(Model model) {
+		OrderData ordd = new OrderData();
 		model.addAttribute("orderData", ordd);
 
-	        return "OrderAdd";
-	    }
+		return "OrderAdd";
+	}
 
 	@RequestMapping(value = "/OrderAdd", method = RequestMethod.POST)
 	public String PostOrderAdd(@ModelAttribute OrderData od, Model model) {
@@ -72,128 +83,119 @@ public class HomeController {
 		return "redirect:/OrderList";
 	}
 
-	    @RequestMapping(value = "/OrderUpdate", method = RequestMethod.GET)
-	    public String OrderUpdate(Model model) {
-	        OrderData ordd = new OrderData();
-	        model.addAttribute("ordd", ordd);
+	@RequestMapping(value = "/OrderUpdate", method = RequestMethod.GET)
+	public String OrderUpdate(Model model) {
+		OrderData ordd = new OrderData();
+		model.addAttribute("ordd", ordd);
 
-	        return "OrderUpdate";
-	    }
-
-
-
+		return "OrderUpdate";
+	}
 
 	@RequestMapping(value = "/OrderList", method = RequestMethod.GET)
-    public String OrderList(Model model) {
+	public String OrderList(Model model) {
 		DataAccessObject<OrderData> dao = new OrderDaoImpl();
 		List<OrderData> list = dao.getAll();
 		model.addAttribute("orderlist", list);
 
 		return "OrdersList";
-    }
+	}
 
 	@RequestMapping(value = "/PartsAdd", method = RequestMethod.GET)
-    public String PartAdd(Model model) {
-	    PartsData pard = new PartsData();
-        model.addAttribute("pard", pard);
+	public String PartAdd(Model model) {
+		PartsData pard = new PartsData();
+		model.addAttribute("pard", pard);
 
-        return "PartsAdd";
-    }
+		return "PartsAdd";
+	}
 
 	@RequestMapping(value = "/PartsUpdate", method = RequestMethod.GET)
-    public String PartsUpdate(Model model) {
-	    PartsData pard = new PartsData();
-        model.addAttribute("pard", pard);
+	public String PartsUpdate(Model model) {
+		PartsData pard = new PartsData();
+		model.addAttribute("pard", pard);
 
-
-        return "PartsUpdate";
-    }
+		return "PartsUpdate";
+	}
 
 	@RequestMapping(value = "/PartsList", method = RequestMethod.GET)
-    public String PartsList(Model model) {
+	public String PartsList(Model model) {
 
-        return "PartsList";
-    }
+		return "PartsList";
+	}
 
 	@RequestMapping(value = "/ProductAdd", method = RequestMethod.GET)
-    public String ProductAdd(Model model) {
-	    ProductData prod = new ProductData();
-        model.addAttribute("prod", prod);
+	public String ProductAdd(Model model) {
+		ProductData prod = new ProductData();
+		model.addAttribute("prod", prod);
 
-        return "ProductAdd";
-    }
+		return "ProductAdd";
+	}
 
 	@RequestMapping(value = "/ProductUpdate", method = RequestMethod.GET)
-    public String ProductUpdate(Model model) {
-	    ProductData prod = new ProductData();
-        model.addAttribute("prod", prod);
+	public String ProductUpdate(Model model) {
+		ProductData prod = new ProductData();
+		model.addAttribute("prod", prod);
 
-
-        return "ProductUpdate";
-    }
+		return "ProductUpdate";
+	}
 
 	@RequestMapping(value = "/ProductList", method = RequestMethod.GET)
-    public String ProductList(Model model) {
+	public String ProductList(Model model) {
 
-        return "ProductList";
-    }
+		return "ProductList";
+	}
 
 	@RequestMapping(value = "/ProgressUpdate", method = RequestMethod.GET)
-    public String ProgressUpdate(Model model) {
-        OrderData ordd = new OrderData();
-        model.addAttribute("ordd", ordd);
+	public String ProgressUpdate(Model model) {
+		OrderData ordd = new OrderData();
+		model.addAttribute("ordd", ordd);
 
-
-        return "ProgressUpdate";
-    }
-
+		return "ProgressUpdate";
+	}
 
 	@RequestMapping(value = "/ProgressList", method = RequestMethod.GET)
-    public String ProgressList(Model model) {
+	public String ProgressList(Model model) {
 
-        return "ProgressList";
-    }
+		return "ProgressList";
+	}
 
 	@RequestMapping(value = "/Receiver", method = RequestMethod.GET)
-    public String Receiver(Model model) {
+	public String Receiver(Model model) {
 
-        return "Receiver";
-    }
+		return "Receiver";
+	}
 
 	@RequestMapping(value = "/ReceiverAdd", method = RequestMethod.GET)
-    public String ReceiverAdd(Model model) {
-	    ReceiverData recd = new ReceiverData();
-        model.addAttribute("recd", recd);
+	public String ReceiverAdd(Model model) {
+		ReceiverData recd = new ReceiverData();
+		model.addAttribute("recd", recd);
 
-        return "ReceiverAdd";
-    }
+		return "ReceiverAdd";
+	}
 
 	@RequestMapping(value = "/ReceiverUpdate", method = RequestMethod.GET)
-    public String ReceiverUpdate(Model model) {
-	    ReceiverData recd = new ReceiverData();
-        model.addAttribute("recd", recd);
+	public String ReceiverUpdate(Model model) {
+		ReceiverData recd = new ReceiverData();
+		model.addAttribute("recd", recd);
 
-        return "ReceiverUpdate";
-    }
+		return "ReceiverUpdate";
+	}
 
 	@RequestMapping(value = "/ReceiverComplete", method = RequestMethod.GET)
-    public String ReceiverComplete(Model model) {
+	public String ReceiverComplete(Model model) {
 
-        return "ReceiverComplete";
-    }
+		return "ReceiverComplete";
+	}
 
 	@RequestMapping(value = "/ReceiverList", method = RequestMethod.GET)
-    public String ReceiverList(Model model) {
+	public String ReceiverList(Model model) {
 
-        return "ReceiverList";
-    }
-
+		return "ReceiverList";
+	}
 
 	@RequestMapping(value = "/Top", method = RequestMethod.GET)
-    public String Top(Model model) {
+	public String Top(Model model) {
 
-        return "Top";
-    }
-
+		return "Top";
+	}
 
 }

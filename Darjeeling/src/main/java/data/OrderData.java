@@ -1,5 +1,6 @@
 package data;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,11 +26,11 @@ public class OrderData {
 	String deadlineMinute;
 	@Column
 	String progress;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	CustomerData customerdata;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	ReceiverData receiverdata;
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	ProductData productdata;
 
 	public Long getId() {

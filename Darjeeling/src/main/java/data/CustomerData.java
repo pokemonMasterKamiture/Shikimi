@@ -66,4 +66,12 @@ public class CustomerData {
 	public void setLove(String love) {
 		this.love = love;
 	}
+
+	public List<OrderData> getOrderdata() {
+		return orderdata;
+	}
+
+	public void setOrderdata(List<OrderData> orderdata) {
+		this.orderdata = orderdata;
+	}
 }
