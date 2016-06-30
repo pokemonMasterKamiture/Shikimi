@@ -26,13 +26,10 @@ public class OrderData {
 	@Column
 	String progress;
 	@ManyToOne
-	@Column
 	CustomerData customerdata;
 	@ManyToOne
-	@Column
 	ReceiverData receiverdata;
 	@ManyToOne
-	@Column
 	ProductData productdata;
 
 	public Long getId() {

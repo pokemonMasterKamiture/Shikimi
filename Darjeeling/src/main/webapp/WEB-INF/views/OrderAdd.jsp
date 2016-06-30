@@ -18,11 +18,11 @@
 			<form:form modelAttribute="orderData">
 				<tr>
 					<td>発注元</td>
-					<td><%-- <form:select path="customerdata">
-							<option value="1">1</option>
+					<td><form:select path="customerdata.id">
+							<option value="16">1</option>
 							<option>鳥使い</option>
 							<option>投資家</option>
-						</form:select> --%></td>
+						</form:select></td>
 				</tr>
 				<tr>
 					<td>出荷先</td>
