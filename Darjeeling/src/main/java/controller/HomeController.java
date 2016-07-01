@@ -12,6 +12,8 @@ import dao.CustDaoImpl;
 import dao.DataAccessObject;
 import dao.OrderDaoImpl;
 import dao.PartsDaoImpl;
+import dao.ProdDaoImpl;
+import dao.RcvDaoImpl;
 import data.CustomerData;
 import data.OrderData;
 import data.PartsData;
@@ -45,15 +47,24 @@ public class HomeController {
 	@RequestMapping(value = "/CustomerUpdate", method = RequestMethod.GET)
     public String CustomerUpdate(Model model) {
 	    CustomerData cd = new CustomerData();
-        model.addAttribute("cd", cd);
+        model.addAttribute("customerData", cd);
         return "CustomerUpdate";
     }
+
+	@RequestMapping(value = "/CustomerUpdate", method = RequestMethod.POST)
+	    public String PostCustomerUpdate(@ModelAttribute CustomerData cd, Model model) {
+	        DataAccessObject<CustomerData> dao = new CustDaoImpl();
+	        dao.update(cd);
+
+	        return "redirect:/CustomerList";
+	    }
+
 
 	@RequestMapping(value = "/CustomerList", method = RequestMethod.GET)
     public String CustomerList(Model model) {
 		DataAccessObject<CustomerData> dao = new CustDaoImpl();
 		List<CustomerData> list = dao.getAll();
-		model.addAttribute("custdata", list);
+		model.addAttribute("custmerData", list);
         return "CustomerList";
     }
 
@@ -76,11 +87,18 @@ public class HomeController {
 	    @RequestMapping(value = "/OrderUpdate", method = RequestMethod.GET)
 	    public String OrderUpdate(Model model) {
 	        OrderData ordd = new OrderData();
-	        model.addAttribute("ordd", ordd);
+	        model.addAttribute("orderData", ordd);
 
 	        return "OrderUpdate";
 	    }
 
+	    @RequestMapping(value = "/OrderUpdate", method = RequestMethod.POST)
+	    public String PostOrderUpdate(@ModelAttribute OrderData od, Model model) {
+	        DataAccessObject<OrderData> dao = new OrderDaoImpl();
+	        dao.update(od);
+
+	        return "redirect:/OrderList";
+	    }
 
 
 
@@ -88,7 +106,7 @@ public class HomeController {
     public String OrderList(Model model) {
 		DataAccessObject<OrderData> dao = new OrderDaoImpl();
 		List<OrderData> list = dao.getAll();
-		model.addAttribute("orderlist", list);
+		model.addAttribute("orderList", list);
 
 		return "OrdersList";
     }
@@ -112,10 +130,18 @@ public class HomeController {
 	@RequestMapping(value = "/PartsUpdate", method = RequestMethod.GET)
     public String PartsUpdate(Model model) {
 	    PartsData pard = new PartsData();
-        model.addAttribute("pard", pard);
+        model.addAttribute("partsData", pard);
 
 
         return "PartsUpdate";
+    }
+
+	@RequestMapping(value = "/PartsUpdate", method = RequestMethod.POST)
+    public String PostPartsUpdate(@ModelAttribute PartsData partsd, Model model) {
+        DataAccessObject<PartsData> dao = new PartsDaoImpl();
+        dao.update(partsd);
+
+        return "redirect:/PartsList";
     }
 
 	@RequestMapping(value = "/PartsList", method = RequestMethod.GET)
@@ -129,19 +155,35 @@ public class HomeController {
 	@RequestMapping(value = "/ProductAdd", method = RequestMethod.GET)
     public String ProductAdd(Model model) {
 	    ProductData prod = new ProductData();
-        model.addAttribute("prod", prod);
+        model.addAttribute("productData", prod);
 
         return "ProductAdd";
+    }
+
+	@RequestMapping(value = "/ProductAdd", method = RequestMethod.POST)
+    public String PostProductAdd(@ModelAttribute ProductData productd, Model model) {
+        DataAccessObject<ProductData> dao = new ProdDaoImpl();
+        dao.add(productd);
+
+        return "redirect:/ProductList";
     }
 
 	@RequestMapping(value = "/ProductUpdate", method = RequestMethod.GET)
     public String ProductUpdate(Model model) {
 	    ProductData prod = new ProductData();
-        model.addAttribute("prod", prod);
+        model.addAttribute("productData", prod);
 
 
         return "ProductUpdate";
     }
+
+	   @RequestMapping(value = "/ProductUpdate", method = RequestMethod.POST)
+	    public String PostProductUpdate(@ModelAttribute ProductData productd, Model model) {
+	        DataAccessObject<ProductData> dao = new ProdDaoImpl();
+	        dao.add(productd);
+
+	        return "redirect:/ProductList";
+	    }
 
 	@RequestMapping(value = "/ProductList", method = RequestMethod.GET)
     public String ProductList(Model model) {
@@ -152,12 +194,19 @@ public class HomeController {
 	@RequestMapping(value = "/ProgressUpdate", method = RequestMethod.GET)
     public String ProgressUpdate(Model model) {
         OrderData ordd = new OrderData();
-        model.addAttribute("ordd", ordd);
+        model.addAttribute("orderData", ordd);
 
 
         return "ProgressUpdate";
     }
 
+	   @RequestMapping(value = "/ProgressUpdate", method = RequestMethod.POST)
+	    public String PostProgressUpdate(@ModelAttribute OrderData orderd, Model model) {
+	        DataAccessObject<OrderData> dao = new OrderDaoImpl();
+	        dao.update(orderd);
+
+	        return "redirect:/ProgressList";
+	    }
 
 	@RequestMapping(value = "/ProgressList", method = RequestMethod.GET)
     public String ProgressList(Model model) {
@@ -173,19 +222,36 @@ public class HomeController {
 
 	@RequestMapping(value = "/ReceiverAdd", method = RequestMethod.GET)
     public String ReceiverAdd(Model model) {
-	    ReceiverData recd = new ReceiverData();
-        model.addAttribute("recd", recd);
+	    ReceiverData rcvd = new ReceiverData();
+        model.addAttribute("receiverData", rcvd);
 
         return "ReceiverAdd";
     }
 
+	   @RequestMapping(value = "/ReceiverAdd", method = RequestMethod.POST)
+	    public String PostReceiverAdd(@ModelAttribute ReceiverData rcvd, Model model) {
+            DataAccessObject<ReceiverData> dao = new RcvDaoImpl();
+            dao.add(rcvd);
+
+            return "redirect:/ReceiverList";
+	    }
+
 	@RequestMapping(value = "/ReceiverUpdate", method = RequestMethod.GET)
     public String ReceiverUpdate(Model model) {
-	    ReceiverData recd = new ReceiverData();
-        model.addAttribute("recd", recd);
+	    ReceiverData rcvd = new ReceiverData();
+        model.addAttribute("receiverData", rcvd);
 
         return "ReceiverUpdate";
     }
+
+    @RequestMapping(value = "/ReceiverUpdate", method = RequestMethod.POST)
+    public String PostReceiverUpdate(@ModelAttribute ReceiverData rcvd, Model model) {
+        DataAccessObject<ReceiverData> dao = new RcvDaoImpl();
+        dao.update(rcvd);
+
+        return "redirect:/ReceiverList";
+    }
+
 
 	@RequestMapping(value = "/ReceiverComplete", method = RequestMethod.GET)
     public String ReceiverComplete(Model model) {

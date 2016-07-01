@@ -54,14 +54,14 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="inage" items="${custdata}">
+					<c:forEach var="list" items="${customerdata}">
 
 
 						<tr>
-							<td>${inage.name}</td>
-							<td>${inage.address}</td>
-							<td>${inage.tel}</td>
-							<td>${inage.love}</td>
+							<td>${list.name}</td>
+							<td>${list.address}</td>
+							<td>${list.tel}</td>
+							<td>${list.love}</td>
 							<td><a href="/st/CustomerUpdate"><input type="button"
 									value="詳細"></a></td>
 						</tr>

@@ -23,11 +23,15 @@ public class ProductData {
 	@Column
 	Long tock;
 	@Column
-	Long reqparts;
+	String reqparts;
 	@Column
 	Long reqnum;
 	@OneToMany(mappedBy = "productdata", cascade = CascadeType.ALL)
 	List<OrderData> orderdata;
+	@Column
+    String process;
+	@Column
+    Long income;
 
 	public Long getId() {
 		return id;
@@ -61,11 +65,11 @@ public class ProductData {
 		this.tock = tock;
 	}
 
-	public Long getReqparts() {
+	public String getReqparts() {
 		return reqparts;
 	}
 
-	public void setReqparts(Long reqparts) {
+	public void setReqparts(String reqparts) {
 		this.reqparts = reqparts;
 	}
 
@@ -76,4 +80,28 @@ public class ProductData {
 	public void setReqnum(Long reqnum) {
 		this.reqnum = reqnum;
 	}
+
+    public List<OrderData> getOrderdata() {
+        return orderdata;
+    }
+
+    public void setOrderdata(List<OrderData> orderdata) {
+        this.orderdata = orderdata;
+    }
+
+    public String getProcess() {
+        return process;
+    }
+
+    public void setProcess(String process) {
+        this.process = process;
+    }
+
+    public Long getIncome() {
+        return income;
+    }
+
+    public void setIncome(Long income) {
+        this.income = income;
+    }
 }
