@@ -65,30 +65,6 @@
 									value="詳細"></a></td>
 						</tr>
 					</c:forEach>
-					<tr>
-						<td>かわ</td>
-						<td>（株）さいたま</td>
-						<td>10円/１00個</td>
-						<td>2000個</td>
-						<td><a href="/st/PartsUpdate"><input type="button"
-								value="更新"></a></td>
-					</tr>
-					<tr>
-						<td>ねぎま</td>
-						<td>（株）さいたま</td>
-						<td>8円/１00個</td>
-						<td>1500個</td>
-						<td><a href="/st/PartsUpdate"><input type="button"
-								value="更新"></a></td>
-					</tr>
-					<tr>
-						<td>つくね</td>
-						<td>（株）さいたま</td>
-						<td>10円/１00個</td>
-						<td>800個</td>
-						<td><a href="/st/PartsUpdate"><input type="button"
-								value="更新"></a></td>
-					</tr>
 				</tbody>
 			</table>
 		</div>
